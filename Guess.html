@@ -1,17 +1,24 @@
 <script>
 
   var guess, message;
-  var answer = "Honda";  //Holds the correct answer
+//  var answer = "Honda";  //Holds the correct answer
+
+  var bestMakes = ["Honda", "Toyota", "Nissan", "Ford", "Kia"];
+
+  function arrayContains(favoriteMakes, make) {  //Thanks Lily
+    return (favoriteMakes.indexOf(make) > -1);
+  };
+
   //Get the first guess
   guess = prompt("Guess what my favorite car manufacturer is");
 
-  while (guess !== answer) { //Runs as long as the answer is wrong
+  while (!arrayContains(bestMakes, guess)) { //Runs as long as the answer is wrong
     message = "Nope, I don't like " + guess + " ." + " Please try again.";
     guess = prompt(message);
   }
 
   //We only get here once the answer is right
-  message = ("Yes! " + answer + " is definitely one of my favorites!");
+  message = ("Yes! " + guess + " is definitely one of my favorites!");
   alert(message);
 
 </script>
