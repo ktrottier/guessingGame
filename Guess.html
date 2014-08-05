@@ -1,15 +1,17 @@
 <script>
 
   var guess, message;
+  var answer = "Honda";  //Holds the correct answer
+  //Get the first guess
   guess = prompt("Guess what my favorite car manufacturer is");
-  var answer = "Honda";
-    if (guess === answer) {
-      message = ("Yes! " + answer + " is definitely one of my favorites!");
-    } else {
-      guess = prompt("Nope, I don't like " + guess + " ." + " Please try again.");
-        }
 
+  while (guess !== answer) { //Runs as long as the answer is wrong
+    message = "Nope, I don't like " + guess + " ." + " Please try again.";
+    guess = prompt(message);
+  }
 
-alert(message);
+  //We only get here once the answer is right
+  message = ("Yes! " + answer + " is definitely one of my favorites!");
+  alert(message);
 
 </script>
